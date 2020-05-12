@@ -1,6 +1,4 @@
 
-let body = document.body;
-
 fetch("https://api.github.com/users/YuliaEY")
 .then(res => res.json())
 .then(json => {
@@ -16,12 +14,15 @@ fetch("https://api.github.com/users/YuliaEY")
 	document.body.appendChild(img);
 	img.src = json.avatar_url;
 
-	let div1 =document.createElement('div');
-	document.body.appendChild(div1);
-	div1.innerHTML = json.url;
+	let link =document.createElement('a');
+	document.body.appendChild(link);
+	link.href = json.html_url;
+	link.innerHTML="my profile"
 })
 
-
-.catch(err => console.log(err))
-
+.catch(err => {
+ 
+   console.error(err);
+   alert("Failed to find User");
+})
 
