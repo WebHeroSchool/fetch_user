@@ -1,4 +1,6 @@
+
 let body = document.body;
+
 fetch("https://api.github.com/users/YuliaEY")
 .then(res => res.json())
 .then(json => {
@@ -18,6 +20,8 @@ fetch("https://api.github.com/users/YuliaEY")
 	document.body.appendChild(div1);
 	div1.innerHTML = json.url;
 })
+
+
 .catch(err => console.log(err))
 
 
